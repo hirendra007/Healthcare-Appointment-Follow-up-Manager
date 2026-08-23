@@ -31,7 +31,7 @@ export default async function AdminPortal() {
     }
   });
   
-  const leavesToday = await prisma.leave.count({
+  const leavesToday = await prisma.doctorLeave.count({
     where: {
       startDate: { lte: today },
       endDate: { gte: startOfDay(today) }
