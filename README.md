@@ -135,13 +135,13 @@ Configure Vercel Cron by adding `vercel.json` to the root directory:
 ```json
 {
   "crons": [
-    { "path": "/api/cron/medication-reminders", "schedule": "0 9 * * *" },
-    { "path": "/api/cron/appointment-reminders", "schedule": "0 * * * *" },
-    { "path": "/api/cron/notification-retries", "schedule": "*/15 * * * *" },
-    { "path": "/api/cron/cleanup-holds", "schedule": "*/5 * * * *" }
+    { "path": "/api/cron/appointment-reminders", "schedule": "0 9 * * *" },
+    { "path": "/api/cron/medication-reminders", "schedule": "0 10 * * *" }
   ]
 }
 ```
+> [!NOTE]
+> Vercel's free Hobby tier restricts projects to a maximum of **2 cron jobs** that can only be scheduled to run **once per day**. If you upgrade to Vercel Pro, you can re-enable higher frequency cron jobs (e.g. running every 15 minutes for immediate notification retries and booking hold cleanup).
 
 ## 11. Production Deployment
 Ready to deploy to **Vercel**:
